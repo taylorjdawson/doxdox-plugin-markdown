@@ -5,7 +5,7 @@ const Handlebars = require('handlebars');
 
 const plugin = data => new Promise((resolve, reject) => {
 
-    fs.readFile(path.join(__dirname, './template.hbs'), 'utf8', (err, contents) => {
+    fs.readFile(path.join(__dirname, 'template.hbs'), 'utf8', (err, contents) => {
 
         if (err) {
 
