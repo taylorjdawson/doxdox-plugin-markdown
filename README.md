@@ -14,5 +14,5 @@ $ npm install doxdox doxdox-plugin-markdown --save-dev
 ## Usage
 
 ```bash
-$ doxdox lib/ --layout markdown --output DOCUMENTATION.md
+$ doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md
 ```
