@@ -1,1 +1,5 @@
 .eslintrc
+
+.travis.yml
+
+Makefile
