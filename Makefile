@@ -1,5 +1,5 @@
 test:
-	doxdox index.js --layout markdown | diff DOCUMENTATION.md -
+	doxdox index.js --layout index.js | diff DOCUMENTATION.md -
 
-docs:
-	doxdox index.js --layout markdown --output DOCUMENTATION.md
+fixtures:
+	doxdox index.js --layout index.js --output DOCUMENTATION.md
