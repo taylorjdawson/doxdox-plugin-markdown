@@ -15,8 +15,8 @@ Markdown template plugin for doxdox.
 
 ##### Parameters
 
-| Name | Type | Description |   |
-| ---- | ---- | ----------- | - |
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
 | data | `Array`  | Methods parsed using a doxdox parser. | &nbsp; |
 
 
