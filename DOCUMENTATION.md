@@ -1,4 +1,4 @@
-# [doxdox-plugin-markdown](https://github.com/neogeek/doxdox-plugin-markdown) *1.1.0*
+# [doxdox-plugin-markdown](https://github.com/neogeek/doxdox-plugin-markdown) *1.1.1*
 
 > Markdown template plugin for doxdox.
 
