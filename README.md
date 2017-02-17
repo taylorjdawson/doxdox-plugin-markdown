@@ -1,5 +1,7 @@
 # doxdox-plugin-markdown
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/doxdox-plugin-markdown.svg)](https://greenkeeper.io/)
+
 > Markdown template plugin for doxdox.
 
 [![Build Status](https://travis-ci.org/neogeek/doxdox-plugin-markdown.svg?branch=master)](https://travis-ci.org/neogeek/doxdox-plugin-markdown)
