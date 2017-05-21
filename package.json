@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "4.0.8"
+    "handlebars": "4.0.10"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "^1.15.0",
