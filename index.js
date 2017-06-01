@@ -3,6 +3,8 @@ const path = require('path');
 
 const Handlebars = require('handlebars');
 
+require('./helpers');
+
 /**
  * Markdown template plugin for doxdox.
  *
