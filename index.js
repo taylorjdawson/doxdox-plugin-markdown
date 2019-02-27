@@ -14,22 +14,27 @@ require('./helpers');
  * @public
  */
 
-const plugin = data => new Promise((resolve, reject) => {
+const plugin = data =>
+    new Promise((resolve, reject) => {
 
-    fs.readFile(path.join(__dirname, 'template.hbs'), 'utf8', (err, contents) => {
+        fs.readFile(
+            path.join(__dirname, 'template.hbs'),
+            'utf8',
+            (err, contents) => {
 
-        if (err) {
+                if (err) {
 
-            return reject(err);
+                    return reject(err);
 
-        }
+                }
 
-        const template = Handlebars.compile(contents);
+                const template = Handlebars.compile(contents);
 
-        return resolve(template(data));
+                return resolve(template(data));
+
+            }
+        );
 
     });
-
-});
 
 module.exports = plugin;
