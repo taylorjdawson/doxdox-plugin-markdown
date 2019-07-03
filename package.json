@@ -8,7 +8,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "4.1.0"
+    "handlebars": "4.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "4.1.0",
@@ -22,7 +23,9 @@
     "test": "npm run lint && npm run test:docs",
     "test:docs": "doxdox index.js --layout index.js | diff DOCUMENTATION.md -",
     "lint": "eslint .",
-    "docs": "doxdox index.js --layout index.js --output DOCUMENTATION.md"
+    "docs": "doxdox index.js --layout index.js --output DOCUMENTATION.md",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "doxdox",
@@ -40,5 +43,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/neogeek/doxdox-plugin-markdown.git"
-  }
+  },
+  "snyk": true
 }
