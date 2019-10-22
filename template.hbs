@@ -1,76 +1,87 @@
 {{#if pkg.homepage}}
-# [{{title}}]({{pkg.homepage}}) {{#if pkg.version}}*{{pkg.version}}*{{/if}}
+    # [{{title}}]({{pkg.homepage}}) {{#if pkg.version}}*{{pkg.version}}*{{/if}}
 {{else}}
-# {{title}} {{#if pkg.version}}*{{pkg.version}}*{{/if}}
+    # {{title}} {{#if pkg.version}}*{{pkg.version}}*{{/if}}
 {{/if}}
 
 {{#if description}}
-> {{description}}
+    > {{description}}
 {{/if}}
 
 {{#each files}}
 
-### {{name}}
+    ### {{name}}
 
-{{#each methods}}
+    {{#each methods}}
 
-#### {{name}}({{params}}) {{#if isPrivate}} *private method*{{/if}}
+        {{#if (isType type "class")}}
 
-{{{description}}}
+            #### Class: {{name}}
 
-{{{body}}}
+        {{else}}
 
-{{#if tags.param}}
+            #### {{name}}({{params}})
 
-##### Parameters
+        {{/if}}
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-{{#each tags.param}}
-| {{name}} | {{#each types}}`{{{.}}}` {{/each}} | {{{replaceNewLinesWithBR description}}} | {{#if isOptional}}*Optional*{{else}}&nbsp;{{/if}} |
-{{/each}}
+        {{{description}}}
 
-{{/if}}
+        {{{body}}}
 
-{{#if tags.property}}
+        {{#if tags.param}}
 
-##### Properties
+            ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
-{{#each tags.param}}
-| {{name}} | {{#each types}}`{{{.}}}` {{/each}} | {{{replaceNewLinesWithBR description}}} | {{#if isOptional}}*Optional*{{else}}&nbsp;{{/if}} |
-{{/each}}
+            | Name | Type | Description |  |
+            | ---- | ---- | ----------- | -------- |
+            {{#each tags.param}}
+                | {{name}} | {{#each types}}`{{{.}}}` {{/each}} | {{{replaceNewLinesWithBR (formatDescription description)}}} | {{#if isOptional}}*Optional*{{else}}&nbsp;{{/if}} |
+            {{/each}}
 
-{{/if}}
+        {{/if}}
 
-{{#if tags.example}}
+        {{#if tags.property}}
 
-##### Examples
+            ##### Properties
 
-{{#each tags.example}}
-```javascript
-{{{.}}}
-```
-{{/each}}
+            | Name | Type | Description |  |
+            | ---- | ---- | ----------- | -------- |
+            {{#each tags.param}}
+                | {{name}} | {{#each types}}`{{{.}}}` {{/each}} | {{{replaceNewLinesWithBR (formatDescription description)}}} | {{#if isOptional}}*Optional*{{else}}&nbsp;{{/if}} |
+            {{/each}}
 
-{{/if}}
+        {{/if}}
 
-##### Returns
+        {{#if tags.example}}
 
-{{#if tags.return}}
+            ##### Examples
 
-{{#each tags.return}}
-- {{#each types}}`{{{.}}}` {{/each}} {{{description}}}
-{{/each}}
+            {{#each tags.example}}
+                ```javascript
+                {{{.}}}
+                ```
+            {{/each}}
 
-{{else}}
+        {{/if}}
 
-- `Void`
+        {{#unless (isType type "class")}}
+            ##### Returns
 
-{{/if}}
+            {{#if tags.return}}
 
-{{/each}}
+                {{#each tags.return}}
+                    - {{#each types}}`{{{.}}}` {{/each}} {{{description}}}
+                {{/each}}
+
+            {{else}}
+
+                - `Void`
+
+            {{/if}}
+
+        {{/unless}}
+
+    {{/each}}
 
 {{/each}}
 
