@@ -1,22 +1,22 @@
 {
   "name": "doxdox-plugin-markdown",
   "description": "Markdown template plugin for doxdox.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "index.js",
   "engines": {
     "node": ">=8.0"
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "4.1.0"
+    "handlebars": "4.7.6"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "4.1.0",
-    "babel-eslint": "10.0.1",
-    "eslint": "5.14.1"
+    "@neogeek/eslint-config-standards": "4.2.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0"
   },
   "peerDependencies": {
-    "doxdox": "~2.0.3"
+    "doxdox": "~3.0.0"
   },
   "scripts": {
     "test": "npm run lint && npm run test:docs",
